@@ -30,3 +30,25 @@ for (let i = 1; i < 6; i++) {
     myLibrary.push(newBook)
 }
 console.log(myLibrary);
+
+for (let i = 0; i < myLibrary.length; i++) {
+    const library = document.getElementById("library");
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const cardTitle = document.createElement("div");
+    const cardAuthor = document.createElement("div");
+    const cardPages = document.createElement("div");
+    const cardHaveRead = document.createElement("div");
+    card.appendChild(cardTitle).classList.add('cardTitle');
+    card.appendChild(cardAuthor).classList.add("cardAuthor");
+    card.appendChild(cardPages).classList.add("cardPages");
+    card.appendChild(cardHaveRead).classList.add("cardHaveRead");
+
+    cardTitle.textContent = myLibrary[i].title;
+    cardAuthor.textContent = myLibrary[i].author;
+    cardPages.textContent = myLibrary[i].pages;
+    cardHaveRead.textContent = myLibrary[i].haveRead;
+
+    library.appendChild(card)
+}
