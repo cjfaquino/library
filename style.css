@@ -6,14 +6,15 @@
 #library {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-template-rows: 300px;
-    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fill, 460px);
+    grid-template-rows: 260px;
+    grid-auto-rows: 260px;
     gap: 25px;
 }
 
 .card {
     border: solid 1px black;
+    display: flex;
 }
 
 .cardHaveReadLabel {

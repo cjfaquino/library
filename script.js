@@ -58,6 +58,7 @@ function displayLibrary() {
 
   for (let i = 0; i < myLibrary.length; i++) {
     const card = document.createElement("div");
+    const content = document.createElement('div');
     card.classList.add("card");
 
     const cardImage = document.createElement('img');
@@ -68,16 +69,17 @@ function displayLibrary() {
     const cardHaveReadLabel = document.createElement("p");
     const deleteBtn = document.createElement('button');
 
-    card.appendChild(cardImage)
-    card.appendChild(cardTitle).classList.add("cardTitle");
-    card.appendChild(cardAuthor).classList.add("cardAuthor");
-    card.appendChild(cardPages).classList.add("cardPages");
-    card.appendChild(cardHaveReadLabel).classList.add("cardHaveReadLabel");
-    card.appendChild(cardHaveRead).classList.add("cardHaveRead");
-    card.appendChild(deleteBtn).classList.add('deleteBtn')
+    card.appendChild(cardImage);
+    card.appendChild(content).classList.add('cardContent');
+    content.appendChild(cardTitle).classList.add("cardTitle");
+    content.appendChild(cardAuthor).classList.add("cardAuthor");
+    content.appendChild(cardPages).classList.add("cardPages");
+    content.appendChild(cardHaveReadLabel).classList.add("cardHaveReadLabel");
+    content.appendChild(cardHaveRead).classList.add("cardHaveRead");
+    content.appendChild(deleteBtn).classList.add('deleteBtn')
     cardHaveRead.type = "checkbox";
     
-    cardImage.src = `https://picsum.photos/199/150?random=${i}`;
+    cardImage.src = `https://picsum.photos/165/265?random=${i}`;
     cardHaveReadLabel.textContent = "Read: ";
     cardTitle.textContent = "Title: " + myLibrary[i].title;
     cardAuthor.textContent = "Author: " + myLibrary[i].author;
