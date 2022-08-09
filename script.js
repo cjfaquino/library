@@ -11,6 +11,7 @@ class Book {
 
 const submit = document.getElementById('submit')
 submit.addEventListener('click', addBookToLibrary)
+submit.addEventListener('click', displayLibrary)
 
 function addBookToLibrary() {
     const title = document.getElementById("title").value;
@@ -31,25 +32,29 @@ for (let i = 1; i < 6; i++) {
 }
 console.log(myLibrary);
 
-for (let i = 0; i < myLibrary.length; i++) {
+function displayLibrary() {
     const library = document.getElementById("library");
-    const card = document.createElement("div");
-    card.classList.add("card");
+    for (let i = 0; i < myLibrary.length; i++) {
+      const card = document.createElement("div");
+      card.classList.add("card");
 
-    const cardTitle = document.createElement("div");
-    const cardAuthor = document.createElement("div");
-    const cardPages = document.createElement("div");
-    const cardHaveRead = document.createElement("div");
-    card.appendChild(cardTitle).classList.add('cardTitle');
-    card.appendChild(cardAuthor).classList.add("cardAuthor");
-    card.appendChild(cardPages).classList.add("cardPages");
-    card.appendChild(cardHaveRead).classList.add("cardHaveRead");
+      const cardTitle = document.createElement("div");
+      const cardAuthor = document.createElement("div");
+      const cardPages = document.createElement("div");
+      const cardHaveRead = document.createElement("div");
+      card.appendChild(cardTitle).classList.add("cardTitle");
+      card.appendChild(cardAuthor).classList.add("cardAuthor");
+      card.appendChild(cardPages).classList.add("cardPages");
+      card.appendChild(cardHaveRead).classList.add("cardHaveRead");
 
-    cardTitle.textContent = myLibrary[i].title;
-    cardAuthor.textContent = myLibrary[i].author;
-    cardPages.textContent = myLibrary[i].pages;
-    cardHaveRead.textContent = myLibrary[i].haveRead;
+      cardTitle.textContent = myLibrary[i].title;
+      cardAuthor.textContent = myLibrary[i].author;
+      cardPages.textContent = myLibrary[i].pages;
+      cardHaveRead.textContent = myLibrary[i].haveRead;
 
-    card.dataset.book = i;
-    library.appendChild(card);
+      card.dataset.book = i;
+      library.appendChild(card);
+    }
 }
+
+displayLibrary()
