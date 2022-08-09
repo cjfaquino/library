@@ -42,6 +42,10 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function updateRead(index, event) {
+  myLibrary[index].haveRead = event.target.checked;
+}
+
 function deleteBook(index) {
   myLibrary.splice(index, 1);
   displayLibrary();
@@ -80,6 +84,7 @@ function displayLibrary() {
     cardHaveRead.checked = myLibrary[i].haveRead;
     deleteBtn.textContent = 'Delete'
 
+    cardHaveRead.addEventListener('click', updateRead.bind(null, i))
     deleteBtn.addEventListener('click', deleteBook.bind(null, i))
     
     card.dataset.book = i;
