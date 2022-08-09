@@ -38,6 +38,11 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function deleteBook(index) {
+    myLibrary.splice(index, 1);
+    displayLibrary();
+}
+
 function displayLibrary() {
     const library = document.getElementById("library");
     removeAllChildNodes(library);
@@ -51,6 +56,7 @@ function displayLibrary() {
       const cardPages = document.createElement("div");
       const cardHaveRead = document.createElement("input");
       const cardHaveReadLabel = document.createElement('p');
+      
       card.appendChild(cardTitle).classList.add("cardTitle");
       card.appendChild(cardAuthor).classList.add("cardAuthor");
       card.appendChild(cardPages).classList.add("cardPages");
