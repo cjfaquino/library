@@ -15,3 +15,7 @@
 .card {
     border: solid 1px black;
 }
+
+.cardHaveReadLabel {
+    display: inline;
+}
