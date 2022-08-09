@@ -21,3 +21,12 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     console.log(myLibrary);
 }
+
+
+// test data
+for (let i = 1; i < 6; i++) {
+    const randomNumber = Math.floor(Math.random() * 9999)
+    const newBook = new Book(`test${i}`, `test${i}`, randomNumber, Math.random() < 0.5);
+    myLibrary.push(newBook)
+}
+console.log(myLibrary);
