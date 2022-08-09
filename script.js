@@ -90,7 +90,6 @@ function displayLibrary() {
     cardHaveRead.addEventListener('click', updateRead.bind(null, i))
     deleteBtn.addEventListener('click', deleteBook.bind(null, i))
     
-    card.dataset.book = i;
     library.appendChild(card);
   }
 }
