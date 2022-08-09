@@ -55,13 +55,15 @@ function displayLibrary() {
     const card = document.createElement("div");
     card.classList.add("card");
 
+    const cardImage = document.createElement('img');
     const cardTitle = document.createElement("div");
     const cardAuthor = document.createElement("div");
     const cardPages = document.createElement("div");
     const cardHaveRead = document.createElement("input");
     const cardHaveReadLabel = document.createElement("p");
-    const deleteBtn = document.createElement('button')
+    const deleteBtn = document.createElement('button');
 
+    card.appendChild(cardImage)
     card.appendChild(cardTitle).classList.add("cardTitle");
     card.appendChild(cardAuthor).classList.add("cardAuthor");
     card.appendChild(cardPages).classList.add("cardPages");
@@ -70,13 +72,14 @@ function displayLibrary() {
     card.appendChild(deleteBtn).classList.add('deleteBtn')
     cardHaveRead.type = "checkbox";
     
+    cardImage.src = `https://picsum.photos/199/150?random=${i}`;
     cardHaveReadLabel.textContent = "Read: ";
     cardTitle.textContent = "Title: " + myLibrary[i].title;
     cardAuthor.textContent = "Author: " + myLibrary[i].author;
     cardPages.textContent = myLibrary[i].pages + " pages";
     cardHaveRead.checked = myLibrary[i].haveRead;
     deleteBtn.textContent = 'Delete'
-    
+
     deleteBtn.addEventListener('click', deleteBook.bind(null, i))
     
     card.dataset.book = i;
