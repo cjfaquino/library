@@ -82,7 +82,7 @@ function displayLibrary() {
     cardImage.src = `https://picsum.photos/165/265?random=${i}`;
     cardHaveReadLabel.textContent = "Read: ";
     cardTitle.textContent = "Title: " + myLibrary[i].title;
-    cardAuthor.textContent = "Author: " + myLibrary[i].author;
+    cardAuthor.textContent = "By: " + myLibrary[i].author;
     cardPages.textContent = myLibrary[i].pages + " pages";
     cardHaveRead.checked = myLibrary[i].haveRead;
     deleteBtn.textContent = 'Delete'
