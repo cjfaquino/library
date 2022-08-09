@@ -19,3 +19,7 @@
 .cardHaveReadLabel {
     display: inline;
 }
+
+.deleteBtn {
+    display: block;
+}
