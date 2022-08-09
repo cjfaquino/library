@@ -49,16 +49,20 @@ function displayLibrary() {
       const cardTitle = document.createElement("div");
       const cardAuthor = document.createElement("div");
       const cardPages = document.createElement("div");
-      const cardHaveRead = document.createElement("div");
+      const cardHaveRead = document.createElement("input");
+      const cardHaveReadLabel = document.createElement('p');
       card.appendChild(cardTitle).classList.add("cardTitle");
       card.appendChild(cardAuthor).classList.add("cardAuthor");
       card.appendChild(cardPages).classList.add("cardPages");
+      card.appendChild(cardHaveReadLabel).classList.add("cardHaveReadLabel");
       card.appendChild(cardHaveRead).classList.add("cardHaveRead");
-
-      cardTitle.textContent = myLibrary[i].title;
-      cardAuthor.textContent = myLibrary[i].author;
-      cardPages.textContent = myLibrary[i].pages;
-      cardHaveRead.textContent = myLibrary[i].haveRead;
+      cardHaveRead.type = "checkbox";
+      
+      cardHaveReadLabel.textContent = 'Read: '
+      cardTitle.textContent = 'Title: ' + myLibrary[i].title;
+      cardAuthor.textContent = 'Author: ' + myLibrary[i].author;
+      cardPages.textContent = myLibrary[i].pages + ' pages';
+      cardHaveRead.checked = myLibrary[i].haveRead;
 
       card.dataset.book = i;
       library.appendChild(card);
