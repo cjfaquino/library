@@ -50,5 +50,6 @@ for (let i = 0; i < myLibrary.length; i++) {
     cardPages.textContent = myLibrary[i].pages;
     cardHaveRead.textContent = myLibrary[i].haveRead;
 
-    library.appendChild(card)
+    card.dataset.book = i;
+    library.appendChild(card);
 }
