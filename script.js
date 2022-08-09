@@ -9,3 +9,15 @@ class Book {
     }
 }
 
+const submit = document.getElementById('submit')
+submit.addEventListener('click', addBookToLibrary)
+
+function addBookToLibrary() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById("pages").value;
+    const haveRead = document.getElementById("haveRead").value;
+    const newBook = new Book(title, author, pages, haveRead);
+    myLibrary.push(newBook);
+    console.log(myLibrary);
+}
