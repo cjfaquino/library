@@ -24,13 +24,16 @@ function addBookToLibrary(e) {
   console.log(myLibrary);
 }
 
+const testTitles = ['A book of books', 'THE Book', 'Just Another Book', 'Not Your Average Book', 'Not a Book', 'That Book', 'This Book']
+const testAuthors = ['Author', 'Another Author', 'That Author', 'This Author', 'Plenty of Authors', 'Not an Author', 'No Author']
+
 // test data
-for (let i = 1; i < 6; i++) {
-  const randomNumber = Math.floor(Math.random() * 9999);
+for (let i = 1; i < 7; i++) {
+  const randomNumber = Math.floor(Math.random() * 7);
   const newBook = new Book(
-    `test${i}`,
-    `test${i}`,
-    randomNumber,
+    testTitles[randomNumber],
+    testAuthors[randomNumber],
+    Math.floor(Math.random() * 9999),
     Math.random() < 0.5
   );
   myLibrary.push(newBook);
