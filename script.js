@@ -32,8 +32,16 @@ for (let i = 1; i < 6; i++) {
 }
 console.log(myLibrary);
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function displayLibrary() {
     const library = document.getElementById("library");
+    removeAllChildNodes(library);
+
     for (let i = 0; i < myLibrary.length; i++) {
       const card = document.createElement("div");
       card.classList.add("card");
