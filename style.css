@@ -1,3 +1,7 @@
+:root {
+    --cardBorderRadius: 5px;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -51,8 +55,19 @@ input[type=number] {
 }
 
 .card {
-    border: solid 1px black;
+    border-radius: var(--cardBorderRadius);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     display: flex;
+}
+
+.card img {
+    border-top-left-radius: var(--cardBorderRadius);
+    border-bottom-left-radius: var(--cardBorderRadius);
+}
+
+.cardContent {
+    padding: 30px;
+    font-size: 1.3rem;
 }
 
 .cardHaveReadLabel {
@@ -61,4 +76,5 @@ input[type=number] {
 
 .deleteBtn {
     display: block;
+    padding: 5px 10px;
 }
