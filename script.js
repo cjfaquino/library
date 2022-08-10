@@ -74,8 +74,9 @@ function displayLibrary() {
     const cardTitle = document.createElement("div");
     const cardAuthor = document.createElement("div");
     const cardPages = document.createElement("div");
+    const readLabel = document.createElement('label');
+    const readText = document.createTextNode('Read: ')
     const cardHaveRead = document.createElement("input");
-    const cardHaveReadLabel = document.createElement("p");
     const deleteBtn = document.createElement('button');
 
     card.appendChild(cardImage);
@@ -89,13 +90,13 @@ function displayLibrary() {
     cardPages.appendChild(pagesNumber).classList.add('pagesNumber');
     cardPages.appendChild(pagesText).classList.add('pagesText');
     content.appendChild(cardPages).classList.add("cardPages");
-    content.appendChild(cardHaveReadLabel).classList.add("cardHaveReadLabel");
-    content.appendChild(cardHaveRead).classList.add("cardHaveRead");
+    content.appendChild(readLabel).classList.add("readLabel");
+    readLabel.appendChild(readText)
+    readLabel.appendChild(cardHaveRead).classList.add("cardHaveRead");
     content.appendChild(deleteBtn).classList.add('deleteBtn')
     cardHaveRead.type = "checkbox";
     
     cardImage.src = `https://picsum.photos/165/265?random=${i}`;
-    cardHaveReadLabel.textContent = "Read: ";
     preTextTitle.textContent = "Title: ";
     preTextAuthor.textContent = "By: ";
     mainTextTitle.textContent =  myLibrary[i].title;

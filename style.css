@@ -93,10 +93,6 @@ input[type=number] {
     width: 100%;
 }
 
-.cardHaveReadLabel {
-    display: inline;
-}
-
 .cardTitle,
 .cardAuthor {
     display: flex;
@@ -117,7 +113,7 @@ input[type=number] {
 }
 
 .cardPages,
-.cardHaveReadLabel {
+.readLabel {
     margin-left: 35px;
 }
 
