@@ -41,13 +41,9 @@ h1 {
     height: 70px;
 }
 
-#form input,
-#submit {
-    padding: 5px;
-}
-
 #form input {
     margin: 0 30px 0 10px;
+    padding: 5px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -65,6 +61,7 @@ input[type=number] {
 
 #submit {
     margin-left: 20px;
+    padding: 5px 20px;
 }
 
 #library {
@@ -125,6 +122,14 @@ input[type=number] {
 }
 
 .deleteBtn {
+    background-color: rgba(255, 255, 255, 0.356);
+    margin-top: 70px;
+    margin-left: 175px;
     display: block;
-    padding: 5px 10px;
+    padding: 5px 20px;
+}
+
+.deleteBtn:hover {
+    background-color: red;
+    color: white;
 }
