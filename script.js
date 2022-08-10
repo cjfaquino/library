@@ -14,13 +14,16 @@ submit.addEventListener("click", addBookToLibrary);
 submit.addEventListener("click", displayLibrary);
 
 function addBookToLibrary(e) {
+  const form = document.getElementById('form');
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const haveRead = document.getElementById("haveRead").checked;
-  const newBook = new Book(title, author, pages, haveRead);
-  myLibrary.push(newBook);
-  e.preventDefault();
+
+  if (form.checkValidity()) {
+    const newBook = new Book(title, author, pages, haveRead);
+    myLibrary.push(newBook);
+  }
   console.log(myLibrary);
 }
 
