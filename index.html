@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
-        <form action="" id="form">
+    <header>
+        <div class="container">
+            <h1>My Library</h1>
+        </div>
+    </header>
+    <form action="" id="form">
+        <div class="container">
             <label for="title">Title</label>
             <input id="title" type="text">
             <label for="author">Author</label>
@@ -19,9 +24,9 @@
             <label for="haveRead">Read</label>
             <input type="checkbox" name="haveRead" id="haveRead" value="false">
             <button type="submit" id="submit">Submit</button>
+        </div>
         </form>
-        <div id="library"></div>
-    </div>
+        <div id="library" class="container"></div>
 
     <script src="./script.js"></script>
 </body>
