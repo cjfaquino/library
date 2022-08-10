@@ -24,7 +24,6 @@ function addBookToLibrary(e) {
     const newBook = new Book(title, author, pages, haveRead);
     myLibrary.push(newBook);
   }
-  console.log(myLibrary);
 }
 
 const testTitles = ['A book of books', 'THE Book', 'Just Another Book', 'Not Your Average Book', 'Not a Book', 'That Book', 'This Book']
@@ -41,7 +40,6 @@ for (let i = 1; i < 7; i++) {
   );
   myLibrary.push(newBook);
 }
-console.log(myLibrary);
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
