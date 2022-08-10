@@ -15,15 +15,18 @@
     </header>
     <form action="#" id="form">
         <div class="container">
-            <label for="title">Title</label>
-            <input id="title" type="text" required>
-            <label for="author">Author</label>
-            <input id="author" type="text" required>
-            <label for="pages">Pages</label>
-            <input id="pages" type="number" min="1" max="99999" required>
-            <label for="haveRead">Read</label>
-            <input type="checkbox" name="haveRead" id="haveRead" value="false">
-            <button type="submit" id="submit">Add</button>
+            <div>
+                <button id="add" type="reset">Add Book</button>
+                <label for="title" class="hide">Title</label>
+                <input id="title" type="text" class="hide" required>
+                <label for="author" class="hide">Author</label>
+                <input id="author" type="text" class="hide" required>
+                <label for="pages" class="hide">Pages</label>
+                <input id="pages" type="number" class="hide" min="1" max="99999" required>
+                <label for="haveRead" class="hide">Read</label>
+                <input type="checkbox" name="haveRead" id="haveRead" class="hide" value="false">
+                <button type="submit" id="submit" class="hide">Add</button>
+            </div>
         </div>
         </form>
         <div id="library" class="container"></div>

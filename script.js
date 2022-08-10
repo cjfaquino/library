@@ -9,12 +9,39 @@ class Book {
   }
 }
 
+const form = document.getElementById("form");
+const labels = form.getElementsByTagName("label");
+const inputs = form.getElementsByTagName("input");
 const submit = document.getElementById("submit");
+const add = document.getElementById('add');
 submit.addEventListener("click", addBookToLibrary);
 submit.addEventListener("click", displayLibrary);
+add.addEventListener("click", showForm)
+
+function showForm() {
+  for (const item of labels) {
+    item.classList.remove('hide');
+  }
+  for (const item of inputs) {
+    item.classList.remove("hide");
+  }
+  submit.classList.remove('hide');
+  add.classList.add("hide");
+}
+
+function hideForm() {
+  for (const item of labels) {
+    item.classList.add('hide');
+  }
+  for (const item of inputs) {
+    item.classList.add("hide");
+  }
+  submit.classList.add('hide');
+  add.classList.remove('hide');
+}
+
 
 function addBookToLibrary(e) {
-  const form = document.getElementById('form');
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
@@ -23,6 +50,7 @@ function addBookToLibrary(e) {
   if (form.checkValidity()) {
     const newBook = new Book(title, author, pages, haveRead);
     myLibrary.push(newBook);
+    hideForm();
   }
 }
 

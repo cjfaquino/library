@@ -35,6 +35,10 @@ h1 {
     color: white;
 }
 
+.hide {
+    display: none !important;
+}
+
 #form {
     padding: 20px;
     display: block;
@@ -67,8 +71,12 @@ input[type=number] {
 
 #form .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+}
+
+#add {
+    padding: 5px 20px;
 }
 
 #submit {
@@ -82,7 +90,8 @@ input[type=number] {
     }
     
     #form input,
-    #submit {
+    #submit,
+    #add {
         font-size: 1.2rem;
         height: 40px;
         margin: 0;
