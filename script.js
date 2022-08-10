@@ -93,10 +93,10 @@ function displayLibrary() {
     content.appendChild(readLabel).classList.add("readLabel");
     readLabel.appendChild(readText)
     readLabel.appendChild(cardHaveRead).classList.add("cardHaveRead");
-    content.appendChild(deleteBtn).classList.add('deleteBtn')
+    card.appendChild(deleteBtn).classList.add('deleteBtn')
     cardHaveRead.type = "checkbox";
     
-    cardImage.src = `https://picsum.photos/165/265?random=${i}`;
+    cardImage.src = `https://picsum.photos/165/260?random=${i}`;
     preTextTitle.textContent = "Title: ";
     preTextAuthor.textContent = "By: ";
     mainTextTitle.textContent =  myLibrary[i].title;
