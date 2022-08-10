@@ -1,59 +1,58 @@
 :root {
-    --cardBorderRadius: 5px;
+  --cardBorderRadius: 5px;
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #3f3f3f;
+  background-color: #3f3f3f;
 }
 
 header {
-    height: 150px;
-    background-color: #3367d6;
+  height: 150px;
+  background-color: #3367d6;
 }
 
 input,
 button {
-    border-radius: 5px;
-    border: none;
+  border-radius: 5px;
+  border: none;
 }
 
 h1 {
-    padding-top: 50px;
-    margin-left: 50px;
+  padding-top: 50px;
+  margin-left: 50px;
 }
 
 .container {
-    max-width: 1500px;
-    margin: 0 auto;
-    color: white;
+  max-width: 1500px;
+  margin: 0 auto;
+  color: white;
 }
 
 .hide {
-    display: none !important;
+  display: none !important;
 }
 
 #form {
-    padding: 20px;
-    display: block;
-    background-color: #4285f4;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  display: block;
+  background-color: #4285f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #form label {
-    display: inline-block;
+  display: inline-block;
 }
 
-
 #form input {
-    margin: 0 30px 0 10px;
-    padding: 5px;
+  margin: 0 30px 0 10px;
+  padding: 5px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -64,146 +63,146 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
-    width: 70px;
-    -moz-appearance: textfield;
+input[type="number"] {
+  width: 70px;
+  -moz-appearance: textfield;
 }
 
 #form .container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #add {
-    padding: 5px 20px;
+  padding: 5px 20px;
 }
 
 #submit {
-    margin-left: 20px;
-    padding: 5px 20px;
+  margin-left: 20px;
+  padding: 5px 20px;
 }
 
 @media (max-width: 969px) {
-    #form .container {
+  #form .container {
     display: unset;
-    }
-    
-    #form input,
-    #submit,
-    #add {
-        font-size: 1.2rem;
-        height: 40px;
-        margin: 0;
-        width: 100%;
-    }
-    
-    #form label {
-        display: block;
-        padding-top: 20px;
-    }
+  }
 
-    #form input[type=checkbox] {
-        display: block;
-        width: 30px;
-        margin-bottom: 50px;
-    }
+  #form input,
+  #submit,
+  #add {
+    font-size: 1.2rem;
+    height: 40px;
+    margin: 0;
+    width: 100%;
+  }
 
-    #submit {
-        display: block;
-    }
+  #form label {
+    display: block;
+    padding-top: 20px;
+  }
+
+  #form input[type="checkbox"] {
+    display: block;
+    width: 30px;
+    margin-bottom: 50px;
+  }
+
+  #submit {
+    display: block;
+  }
 }
 
 #library {
-    margin-top: 50px;
-    padding-bottom: 50px;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, 460px);
-    grid-template-rows: 260px;
-    grid-auto-rows: 260px;
-    gap: 50px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 460px);
+  grid-template-rows: 260px;
+  grid-auto-rows: 260px;
+  gap: 50px;
 }
 
 .card {
-    border-radius: var(--cardBorderRadius);
-    background-color: #707070;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
-    display: grid;
-    grid-template-columns: 165px 295px;
-    grid-template-rows: 225px 35px;
-    grid-template-areas: 
+  border-radius: var(--cardBorderRadius);
+  background-color: #707070;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  display: grid;
+  grid-template-columns: 165px 295px;
+  grid-template-rows: 225px 35px;
+  grid-template-areas:
     "img content"
     "img delete";
 }
 
 .card img {
-    border-top-left-radius: var(--cardBorderRadius);
-    border-bottom-left-radius: var(--cardBorderRadius);
-    grid-area: 'img';
+  border-top-left-radius: var(--cardBorderRadius);
+  border-bottom-left-radius: var(--cardBorderRadius);
+  grid-area: "img";
 }
 
 .cardContent {
-    padding: 30px;
-    font-size: 1.1rem;
-    line-height: 30px;
-    width: 100%;
-    grid-area: 'content';
+  padding: 30px;
+  font-size: 1.1rem;
+  line-height: 30px;
+  width: 100%;
+  grid-area: "content";
 }
 
 .cardTitle,
 .cardAuthor {
-    display: flex;
+  display: flex;
 }
 
 .preText {
-    display: inline-block;
-    width: 35px;
-    padding-right: 5px;
-    font-size: .9rem;
-    text-align: right;
+  display: inline-block;
+  width: 35px;
+  padding-right: 5px;
+  font-size: 0.9rem;
+  text-align: right;
 }
 
 .mainText {
-    max-height: 65px;
-    max-width: 200px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  max-height: 65px;
+  max-width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .preText,
 .pagesText {
-    color: black;
-    font-size: .9rem;
+  color: black;
+  font-size: 0.9rem;
 }
 
 .cardPages,
 .readLabel {
-    margin-left: 35px;
+  margin-left: 35px;
 }
 
 .deleteBtn {
-    background-color: rgba(255, 255, 255, 0.356);
-    grid-area: delete;
-    padding: 5px 20px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
+  background-color: rgba(255, 255, 255, 0.356);
+  grid-area: delete;
+  padding: 5px 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .deleteBtn:hover {
-    background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 
 @media (max-width: 515px) {
-    .card {
-        transform: scale(.75);
-    }
-    
-    #library {
-        margin-top: 30px;
-        gap: 0;
-    }
+  .card {
+    transform: scale(0.75);
+  }
+
+  #library {
+    margin-top: 30px;
+    gap: 0;
+  }
 }
