@@ -29,16 +29,20 @@ const testAuthors = [
   "No Author",
 ];
 
-for (let i = 1; i < 7; i++) {
-  const randomNumber = Math.floor(Math.random() * 7);
-  const newBook = new Book(
-    testTitles[randomNumber],
-    testAuthors[randomNumber],
-    Math.floor(Math.random() * 9999),
-    Math.random() < 0.5
-  );
-  myLibrary.push(newBook);
+function test() {
+  for (let i = 1; i < 7; i++) {
+    const randomNumber = Math.floor(Math.random() * 7);
+    const newBook = new Book(
+      testTitles[randomNumber],
+      testAuthors[randomNumber],
+      Math.floor(Math.random() * 9999),
+      Math.random() < 0.5
+    );
+    myLibrary.push(newBook);
+  }
 }
+
+test()
 
 const form = document.getElementById("form");
 const labels = form.getElementsByTagName("label");
