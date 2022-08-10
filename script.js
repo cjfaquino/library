@@ -9,6 +9,37 @@ class Book {
   }
 }
 
+// test data
+const testTitles = [
+  "A book of books",
+  "THE Book",
+  "Just Another Book",
+  "Not Your Average Book",
+  "Not a Book",
+  "That Book",
+  "This Book",
+];
+const testAuthors = [
+  "Author",
+  "Another Author",
+  "That Author",
+  "This Author",
+  "Plenty of Authors",
+  "Not an Author",
+  "No Author",
+];
+
+for (let i = 1; i < 7; i++) {
+  const randomNumber = Math.floor(Math.random() * 7);
+  const newBook = new Book(
+    testTitles[randomNumber],
+    testAuthors[randomNumber],
+    Math.floor(Math.random() * 9999),
+    Math.random() < 0.5
+  );
+  myLibrary.push(newBook);
+}
+
 const form = document.getElementById("form");
 const labels = form.getElementsByTagName("label");
 const inputs = form.getElementsByTagName("input");
@@ -51,37 +82,6 @@ function addBookToLibrary(e) {
     myLibrary.push(newBook);
     hideForm();
   }
-}
-
-const testTitles = [
-  "A book of books",
-  "THE Book",
-  "Just Another Book",
-  "Not Your Average Book",
-  "Not a Book",
-  "That Book",
-  "This Book",
-];
-const testAuthors = [
-  "Author",
-  "Another Author",
-  "That Author",
-  "This Author",
-  "Plenty of Authors",
-  "Not an Author",
-  "No Author",
-];
-
-// test data
-for (let i = 1; i < 7; i++) {
-  const randomNumber = Math.floor(Math.random() * 7);
-  const newBook = new Book(
-    testTitles[randomNumber],
-    testAuthors[randomNumber],
-    Math.floor(Math.random() * 9999),
-    Math.random() < 0.5
-  );
-  myLibrary.push(newBook);
 }
 
 function removeAllChildNodes(parent) {
