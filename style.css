@@ -59,7 +59,7 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
-    width: 38px;
+    width: 70px;
     -moz-appearance: textfield;
 }
 
