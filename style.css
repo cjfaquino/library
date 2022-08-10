@@ -174,4 +174,9 @@ input[type=number] {
     .card {
         transform: scale(.75);
     }
+    
+    #library {
+        margin-top: 30px;
+        gap: 0;
+    }
 }
