@@ -64,6 +64,12 @@ function displayLibrary() {
     const content = document.createElement('div');
     card.classList.add("card");
 
+    const preTextTitle = document.createElement('span');
+    const preTextAuthor = document.createElement('span');
+    const mainTextTitle = document.createElement("span");
+    const mainTextAuthor = document.createElement("span");
+    const pagesText = document.createElement('span')
+    const pagesNumber = document.createElement('span')
     const cardImage = document.createElement('img');
     const cardTitle = document.createElement("div");
     const cardAuthor = document.createElement("div");
@@ -75,7 +81,13 @@ function displayLibrary() {
     card.appendChild(cardImage);
     card.appendChild(content).classList.add('cardContent');
     content.appendChild(cardTitle).classList.add("cardTitle");
+    cardTitle.appendChild(preTextTitle).classList.add('preText');
+    cardTitle.appendChild(mainTextTitle).classList.add("mainText");
+    cardAuthor.appendChild(preTextAuthor).classList.add("preText");
+    cardAuthor.appendChild(mainTextAuthor).classList.add("mainText");
     content.appendChild(cardAuthor).classList.add("cardAuthor");
+    cardPages.appendChild(pagesNumber).classList.add('pagesNumber');
+    cardPages.appendChild(pagesText).classList.add('pagesText');
     content.appendChild(cardPages).classList.add("cardPages");
     content.appendChild(cardHaveReadLabel).classList.add("cardHaveReadLabel");
     content.appendChild(cardHaveRead).classList.add("cardHaveRead");
@@ -84,9 +96,12 @@ function displayLibrary() {
     
     cardImage.src = `https://picsum.photos/165/265?random=${i}`;
     cardHaveReadLabel.textContent = "Read: ";
-    cardTitle.textContent = "Title: " + myLibrary[i].title;
-    cardAuthor.textContent = "By: " + myLibrary[i].author;
-    cardPages.textContent = myLibrary[i].pages + " pages";
+    preTextTitle.textContent = "Title: ";
+    preTextAuthor.textContent = "By: ";
+    mainTextTitle.textContent =  myLibrary[i].title;
+    mainTextAuthor.textContent = myLibrary[i].author;
+    pagesText.textContent = " pages";
+    pagesNumber.textContent = myLibrary[i].pages;
     cardHaveRead.checked = myLibrary[i].haveRead;
     deleteBtn.textContent = 'Delete'
 

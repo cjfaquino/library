@@ -98,6 +98,19 @@ input[type=number] {
     display: inline;
 }
 
+.preText {
+    display: inline-block;
+    padding-right: 5px;
+    font-size: .9rem;
+    text-align: right;
+}
+
+.preText,
+.pagesText {
+    color: black;
+    font-size: .9rem;
+}
+
 .deleteBtn {
     display: block;
     padding: 5px 10px;
