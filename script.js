@@ -43,6 +43,7 @@ const library = (() => {
   
   //cache DOM
   const form = document.getElementById("form");
+  const library = document.getElementById("library");
   const labels = form.getElementsByTagName("label");
   const inputs = form.getElementsByTagName("input");
   const submit = document.getElementById("submit");
@@ -104,7 +105,6 @@ const library = (() => {
   }
   
   function render() {
-    const library = document.getElementById("library");
     removeAllChildNodes(library);
   
     for (let i = 0; i < myLibrary.length; i++) {
