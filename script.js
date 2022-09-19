@@ -50,7 +50,7 @@ const library = (() => {
 
   //bind events
   submit.addEventListener("click", addBookToLibrary);
-  submit.addEventListener("click", displayLibrary);
+  submit.addEventListener("click", render);
   add.addEventListener("click", showForm);
   
   function showForm() {
@@ -100,10 +100,10 @@ const library = (() => {
   
   function deleteBook(index) {
     myLibrary.splice(index, 1);
-    displayLibrary();
+    render();
   }
   
-  function displayLibrary() {
+  function render() {
     const library = document.getElementById("library");
     removeAllChildNodes(library);
   
@@ -160,8 +160,8 @@ const library = (() => {
       library.appendChild(card);
     }
   }
-  return {displayLibrary, Book}
+  return {render, Book}
 })();
 
 library.Book.test();
-library.displayLibrary();
+library.render();
