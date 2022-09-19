@@ -54,6 +54,10 @@ const library = (() => {
   submit.addEventListener("click", render);
   add.addEventListener("click", showForm);
   
+  function getLibrary(){
+    return myLibrary
+  }
+
   function showForm() {
     for (const item of labels) {
       item.classList.remove("hide");
@@ -103,7 +107,7 @@ const library = (() => {
     myLibrary.splice(index, 1);
     render();
   }
-  
+
   function render() {
     removeAllChildNodes(library);
   
@@ -160,7 +164,7 @@ const library = (() => {
       library.appendChild(card);
     }
   }
-  return {render, Book}
+  return {render, Book, getLibrary}
 })();
 
 library.Book.test();
