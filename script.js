@@ -46,10 +46,7 @@ const library = (() => {
   const library = document.getElementById("library");
   const labels = form.getElementsByTagName("label");
   const inputs = form.getElementsByTagName("input");
-  const title = document.getElementById("title");
-  const author = document.getElementById("author");
-  const pages = document.getElementById("pages");
-  const haveRead = document.getElementById("haveRead");
+  const [title, author, pages, haveRead] = inputs;
   const submit = document.getElementById("submit");
   const add = document.getElementById("add");
 
