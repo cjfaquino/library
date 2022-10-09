@@ -112,7 +112,7 @@ const library = (() => {
     };
   }
 
-  function createNewCardDOM(i) {
+  function createNewCardDOM(index) {
     const card = document.createElement("div");
     const content = document.createElement("div");
     card.classList.add("card");
@@ -149,14 +149,14 @@ const library = (() => {
     card.appendChild(deleteBtn).classList.add("deleteBtn");
     cardHaveRead.type = "checkbox";
 
-    cardImage.src = `https://picsum.photos/165/260?random=${i}`;
-    preTextTitle.textContent = "Title: ";
+    cardImage.src = `https://picsum.photos/165/260?random=${index}`;
+    preTextTndextle.textContent = "Title: ";
     preTextAuthor.textContent = "By: ";
-    mainTextTitle.textContent = myLibrary[i].title;
-    mainTextAuthor.textContent = myLibrary[i].author;
+    mainTextTitle.textContent = myLibrary[index].title;
+    mainTextAuthor.textContent = myLibrary[index].author;
     pagesText.textContent = " pages";
-    pagesNumber.textContent = myLibrary[i].pages;
-    cardHaveRead.checked = myLibrary[i].haveRead;
+    pagesNumber.textContent = myLibrary[index].pages;
+    cardHaveRead.checked = myLibrary[index].haveRead;
     deleteBtn.textContent = "Delete";
     return { cardHaveRead, deleteBtn, card };
   }
