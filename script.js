@@ -46,6 +46,10 @@ const library = (() => {
   const library = document.getElementById("library");
   const labels = form.getElementsByTagName("label");
   const inputs = form.getElementsByTagName("input");
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+  const haveRead = document.getElementById("haveRead");
   const submit = document.getElementById("submit");
   const add = document.getElementById("add");
 
@@ -81,13 +85,13 @@ const library = (() => {
   }
 
   function addBookToLibrary() {
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
-    const haveRead = document.getElementById("haveRead").checked;
+    const newTitle = title.value;
+    const newAuthor = author.value;
+    const newPages = pages.value;
+    const newHaveRead = haveRead.checked;
 
     if (form.checkValidity()) {
-      const newBook = new Book(title, author, pages, haveRead);
+      const newBook = new Book(newTitle, newAuthor, newPages, newHaveRead);
       myLibrary.push(newBook);
       setLocalStorage();
       hideForm();
