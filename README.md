@@ -1,5 +1,6 @@
 # library
 
+- Local Storage
 - DOM Manipulation
 - Responsive design
 - Object Construction
