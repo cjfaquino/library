@@ -99,13 +99,17 @@ const library = (() => {
     }
   }
 
-  function updateRead(index, event) {
-    myLibrary[index].haveRead = event.target.checked;
+  function updateRead(index) {
+    return (event) => {
+      myLibrary[index].haveRead = event.target.checked;
+    };
   }
 
   function deleteBook(index) {
-    myLibrary.splice(index, 1);
-    render();
+    return () => {
+      myLibrary.splice(index, 1);
+      render();
+    };
   }
 
   function createNewCardDOM(i) {
@@ -163,8 +167,8 @@ const library = (() => {
     for (let i = 0; i < myLibrary.length; i++) {
       const { cardHaveRead, deleteBtn, card } = createNewCardDOM(i);
 
-      cardHaveRead.addEventListener("click", updateRead.bind(null, i));
-      deleteBtn.addEventListener("click", deleteBook.bind(null, i));
+      cardHaveRead.addEventListener("click", updateRead(i));
+      deleteBtn.addEventListener("click", deleteBook(i));
 
       library.appendChild(card);
     }
