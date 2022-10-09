@@ -89,6 +89,7 @@ const library = (() => {
     if (form.checkValidity()) {
       const newBook = new Book(title, author, pages, haveRead);
       myLibrary.push(newBook);
+      setLocalStorage();
       hideForm();
     }
   }
@@ -102,14 +103,25 @@ const library = (() => {
   function updateRead(index) {
     return (event) => {
       myLibrary[index].haveRead = event.target.checked;
+      setLocalStorage();
     };
   }
 
   function deleteBook(index) {
     return () => {
       myLibrary.splice(index, 1);
+      setLocalStorage();
       render();
     };
+  }
+
+  function setLocalStorage() {
+    localStorage.setItem("library", JSON.stringify(myLibrary));
+  }
+
+  function getLocalStorage() {
+    const local = JSON.parse(localStorage.getItem("library"));
+    myLibrary = local;
   }
 
   function createNewCardDOM(index) {
@@ -150,7 +162,7 @@ const library = (() => {
     cardHaveRead.type = "checkbox";
 
     cardImage.src = `https://picsum.photos/165/260?random=${index}`;
-    preTextTndextle.textContent = "Title: ";
+    preTextTitle.textContent = "Title: ";
     preTextAuthor.textContent = "By: ";
     mainTextTitle.textContent = myLibrary[index].title;
     mainTextAuthor.textContent = myLibrary[index].author;
@@ -173,8 +185,13 @@ const library = (() => {
       library.appendChild(card);
     }
   }
-  return { render, Book, getLibrary };
+  return { render, Book, getLibrary, setLocalStorage, getLocalStorage };
 })();
 
-library.Book.test();
+if (typeof localStorage.library === "undefined") {
+  library.Book.test();
+  library.setLocalStorage();
+}
+
+library.getLocalStorage();
 library.render();
