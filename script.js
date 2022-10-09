@@ -32,7 +32,7 @@ const library = (() => {
         myLibrary.push(newBook);
       }
     }
-  
+
     constructor(title, author, pages, haveRead) {
       this.title = title;
       this.author = author;
@@ -40,7 +40,7 @@ const library = (() => {
       this.haveRead = haveRead;
     }
   }
-  
+
   //cache DOM
   const form = document.getElementById("form");
   const library = document.getElementById("library");
@@ -53,9 +53,9 @@ const library = (() => {
   submit.addEventListener("click", addBookToLibrary);
   submit.addEventListener("click", render);
   add.addEventListener("click", showForm);
-  
-  function getLibrary(){
-    return myLibrary
+
+  function getLibrary() {
+    return myLibrary;
   }
 
   function showForm() {
@@ -68,7 +68,7 @@ const library = (() => {
     submit.classList.remove("hide");
     add.classList.add("hide");
   }
-  
+
   function hideForm() {
     for (const item of labels) {
       item.classList.add("hide");
@@ -79,30 +79,30 @@ const library = (() => {
     submit.classList.add("hide");
     add.classList.remove("hide");
   }
-  
+
   function addBookToLibrary() {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
     const haveRead = document.getElementById("haveRead").checked;
-  
+
     if (form.checkValidity()) {
       const newBook = new Book(title, author, pages, haveRead);
       myLibrary.push(newBook);
       hideForm();
     }
   }
-  
+
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
     }
   }
-  
+
   function updateRead(index, event) {
     myLibrary[index].haveRead = event.target.checked;
   }
-  
+
   function deleteBook(index) {
     myLibrary.splice(index, 1);
     render();
@@ -110,12 +110,12 @@ const library = (() => {
 
   function render() {
     removeAllChildNodes(library);
-  
+
     for (let i = 0; i < myLibrary.length; i++) {
       const card = document.createElement("div");
       const content = document.createElement("div");
       card.classList.add("card");
-  
+
       const preTextTitle = document.createElement("span");
       const preTextAuthor = document.createElement("span");
       const mainTextTitle = document.createElement("span");
@@ -130,7 +130,7 @@ const library = (() => {
       const readText = document.createTextNode("Read: ");
       const cardHaveRead = document.createElement("input");
       const deleteBtn = document.createElement("button");
-  
+
       card.appendChild(cardImage);
       card.appendChild(content).classList.add("cardContent");
       content.appendChild(cardTitle).classList.add("cardTitle");
@@ -147,7 +147,7 @@ const library = (() => {
       readLabel.appendChild(cardHaveRead).classList.add("cardHaveRead");
       card.appendChild(deleteBtn).classList.add("deleteBtn");
       cardHaveRead.type = "checkbox";
-  
+
       cardImage.src = `https://picsum.photos/165/260?random=${i}`;
       preTextTitle.textContent = "Title: ";
       preTextAuthor.textContent = "By: ";
@@ -157,14 +157,14 @@ const library = (() => {
       pagesNumber.textContent = myLibrary[i].pages;
       cardHaveRead.checked = myLibrary[i].haveRead;
       deleteBtn.textContent = "Delete";
-  
+
       cardHaveRead.addEventListener("click", updateRead.bind(null, i));
       deleteBtn.addEventListener("click", deleteBook.bind(null, i));
-  
+
       library.appendChild(card);
     }
   }
-  return {render, Book, getLibrary}
+  return { render, Book, getLibrary };
 })();
 
 library.Book.test();
