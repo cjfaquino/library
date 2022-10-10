@@ -47,13 +47,43 @@ const library = (() => {
   const labels = form.getElementsByTagName('label');
   const inputs = form.getElementsByTagName('input');
   const [title, author, pages, haveRead] = inputs;
+  const nameInputs = [title, author];
+  const validInputs = [...nameInputs, pages];
   const submit = document.getElementById('submit');
   const add = document.getElementById('add');
-
   //bind events
   submit.addEventListener('click', addBookToLibrary);
   submit.addEventListener('click', render);
   add.addEventListener('click', showForm);
+
+  const checkErrors = (event) => {
+    const item = event.target;
+    item.setCustomValidity('');
+    item.checkValidity();
+  };
+
+  const setNameErrorMessage = (event) => {
+    const item = event.target;
+    item.setCustomValidity(`Please add the book's ${item.id}`);
+    item.checkValidity();
+  };
+
+  const setPageErrorMessage = (event) => {
+    const item = event.target;
+    if (item.validity.valueMissing) {
+      item.setCustomValidity('Please add book length in pages');
+    }
+  };
+
+  validInputs.forEach((el) => {
+    el.addEventListener('input', checkErrors);
+  });
+
+  nameInputs.forEach((el) => {
+    el.addEventListener('invalid', setNameErrorMessage);
+  });
+
+  pages.addEventListener('invalid', setPageErrorMessage);
 
   function getLibrary() {
     return myLibrary;
